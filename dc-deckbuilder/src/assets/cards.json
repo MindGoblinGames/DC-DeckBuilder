@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Aim",
+    "category": "Offense",
+    "cardType": "Basic",
+    "action": "Minor Action",
+    "description": "Any attack rolls you make until the end of your turn have a +1 bonus."
+  },{
+    "name": "Assist",
+    "category": "Support",
+    "cardType": "Basic",
+    "action": "Major Action",
+    "description": "Allow yourself or an ally to draw two cards. If you target a biological creature with this card, they may draw three cards rather than two."
+  }
+]
