@@ -1,15 +1,33 @@
 [
   {
-    "name": "Aim",
+    "name": "Strike",
     "category": "Offense",
     "cardType": "Basic",
-    "action": "Minor Action",
-    "description": "Any attack rolls you make until the end of your turn have a +1 bonus."
+    "action": "Major Action",
+    "description": "Make a melee attack. Deals 4 damage."
+  },{
+    "name": "Block",
+    "category": "Defense",
+    "cardType": "Basic",
+    "action": "Major Action",
+    "description": "Any attacks made against you deal half damage. This effect ends at the start of your next turn. Draw 1 card."
   },{
     "name": "Assist",
     "category": "Support",
-    "cardType": "Basic",
+    "cardType": "Advanced",
     "action": "Major Action",
-    "description": "Allow yourself or an ally to draw two cards. If you target a biological creature with this card, they may draw three cards rather than two."
+    "description": "Allow yourself or an ally to draw two cards. If you target a Biological creature with this card, they may draw three cards rather than two."
+  },{
+    "name": "Dash",
+    "category": "Utility",
+    "cardType": "Advanced",
+    "action": "Minor Action",
+    "description": "You may move an additional time this turn."
+  },{
+    "name": "Dying Breath",
+    "category": "Defense",
+    "cardType": "Hero",
+    "action": "Activated when you fall to 0 HP",
+    "description": "You may play any cards in your hand, so long as they do not restore Hit Points, are either a Major Action or a Minor Action, and you have the energy to play them (if required). You then fall unconscious as normal. This card is destroyed after use."
   }
 ]

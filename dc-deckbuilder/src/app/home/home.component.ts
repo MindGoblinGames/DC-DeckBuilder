@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-
+  // cards = ["Strike", "Block", "Assist", "Dash", "Dying Breath"];
+  // status = ["Intact", "Intact", "Intact", "Exhausted", "Destroyed"];
 }

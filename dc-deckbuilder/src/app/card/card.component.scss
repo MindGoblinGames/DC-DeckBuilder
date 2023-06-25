@@ -1,0 +1,67 @@
+.card {
+  width: 250px;
+  height: 400px;
+  background-image: url("../../assets/blank_card.webp");
+  color: black;
+}
+
+.artBox {
+  position: relative;
+  top: 1px;
+}
+
+.cardArt {
+  width: 246px;
+  height: 185px;
+}
+
+.catIcon {
+  position: absolute;
+  width: 75px;
+  top: 112px;
+  left: 1px;
+}
+
+.typeIcon {
+  position: absolute;
+  width: 75px;
+  top: 112px;
+  left: 175px;
+}
+
+.overlay {
+  position: absolute;
+  width: 246px;
+  height: 185px;
+  left: 2px;
+}
+
+h2, h3, h4, p {
+  text-align: center;
+  margin: 0;
+}
+
+.nameBox {
+  padding-top: 3px;
+}
+
+.actionBox {
+  height: 22px;
+}
+
+.descBox {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  height: 100px;
+  margin: 5px 0;
+}
+
+.statusBox {
+  text-align: center;
+  color: darkred;
+  font-weight: bold;
+  height: 18px;
+  padding: 3px;
+  border-top: 2px dashed black;
+}

@@ -1,9 +1,18 @@
-<table>
-  <tbody>
-    <tr><td>Name</td><td>{{card.name}}</td></tr>
-    <tr><td>Category</td><td>{{card.category}}</td></tr>
-    <tr><td>Type</td><td>{{card.cardType}}</td></tr>
-    <tr><td>Desc</td><td>{{card.description}}</td></tr>
-    <tr><td>Status</td><td>{{card.status}}</td></tr>
-  </tbody>
-</table>
+<div class="card">
+    <div class="nameBox"><h2>{{card.name}}</h2></div>
+    <div class="artBox">
+      <img class="cardArt" [src]="art" [alt]="name + ' Art'" (error)="imgError($event)">
+      <img *ngIf="card.status != 'Intact'" class="overlay" [src]="overlay">
+      <img class="catIcon" [src]="catIcon" [alt]="card.category + ' Art'">
+      <img class="typeIcon" [src]="typeIcon" [alt]="card.cardType + ' Art'">
+    </div>
+    <div class="actionBox">
+      <h3 *ngIf="card.action.length < 30">{{card.action}}</h3>
+      <h4 *ngIf="card.action.length >= 30">{{card.action}}</h4>
+    </div>
+    <div class="descBox">
+      <p *ngIf="card.description.length <= 200">{{card.description}}</p>
+      <p *ngIf="card.description.length > 200" style="font-size: 12px">{{card.description}}</p>
+    </div>
+    <div *ngIf="card.status != 'Intact'" class="statusBox">{{card.status}}</div>
+</div>
