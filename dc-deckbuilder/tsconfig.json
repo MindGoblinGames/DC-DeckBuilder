@@ -24,7 +24,10 @@
       "dom"
     ],
     "resolveJsonModule": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "paths": {
+      "@angular/*": ["./node_modules/@angular/*"]
+     },
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

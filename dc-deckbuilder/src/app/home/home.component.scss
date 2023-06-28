@@ -8,7 +8,57 @@ div {
 }
 
 .menu-btn {
-  width: 65vw;
+  width: 65%;
   font-size: 24px;
   color: white;
+  box-shadow: black 2px 2px;
+}
+
+#navWrapper {
+  position: fixed;
+  top: 20px;
+  width: calc(100% - 16px);
+}
+
+.navBtn {
+  width: 75px;
+  height: 75px;
+  padding: 0;
+  box-sizing: content-box;
+  cursor: pointer;
+  background-color: gray;
+  box-shadow: black 2px 2px 2px 2px;
+}
+
+#mg-logo {
+  float: left;
+  margin-left: 12px;
+}
+
+#mg-logo img {
+  width: inherit;
+}
+
+#profileBtn {
+  float: right;
+  margin-right: 12px;
+}
+
+.navBtn:hover {
+  background-color: rgb(117, 117, 117);
+}
+
+//fix layouts on smalls screens
+@media(max-width: 900px) {
+  .navBtn {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media(max-width: 500px) {
+  .navBtn {
+    width: 35px;
+    height: 35px;
+  }
 }
