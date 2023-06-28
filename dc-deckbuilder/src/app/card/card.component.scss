@@ -3,6 +3,13 @@
   height: 400px;
   background-image: url("../../assets/blank_card.webp");
   color: black;
+  cursor: pointer;
+}
+
+.card:hover {
+  border: 2px gold solid;
+  border-radius: 12px;
+  margin: -2px; //prevent layout shifts on hover
 }
 
 .artBox {
