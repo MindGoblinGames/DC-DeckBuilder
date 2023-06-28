@@ -11,8 +11,8 @@ export class HomeComponent {
   mgLogoSrc = '../assets/mind_goblin_hidden.webp';
   iconStyle: IconPrefix = 'far';
   
-  cards = ['Strike', 'Block', 'Assist', 'Dash', 'Dying Breath'];
-  status = ['Intact', 'Intact', 'Intact', 'Exhausted', 'Destroyed'];
+  // cards = ['Strike', 'Block', 'Assist', 'Dash', 'Dying Breath'];
+  // status = ['Intact', 'Intact', 'Intact', 'Exhausted', 'Destroyed'];
 
   navRules() {
     let rulesUrl = '../assets/Rules/Dungeon_Crawlers_v0.5.0.pdf'; //update w/ new versions
