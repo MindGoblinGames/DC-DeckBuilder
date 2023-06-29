@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IconPrefix } from '@fortawesome/fontawesome-svg-core';
+import { IconName, IconPrefix } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +7,14 @@ import { IconPrefix } from '@fortawesome/fontawesome-svg-core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
+  popLogin = false;
   loggedIn = false;
-  mgLogoSrc = '../assets/mind_goblin_hidden.webp';
-  iconStyle: IconPrefix = 'far';
+  mgLogoSrc = '../assets/mind_goblin_icon.webp';
+  mgLogoHiddenSrc = '../assets/mind_goblin_hidden.webp';
+  mgLogo = this.mgLogoHiddenSrc;
+  //loginIcon: IconProp = ['fas', 'door-closed'];
+  loginIcon: IconName = 'door-closed';
+  profilePrefix: IconPrefix = 'far';
   
   // cards = ['Strike', 'Block', 'Assist', 'Dash', 'Dying Breath'];
   // status = ['Intact', 'Intact', 'Intact', 'Exhausted', 'Destroyed'];
@@ -23,22 +28,16 @@ export class HomeComponent {
     console.log('send to MG hub');
   }
 
-  async login() {
-    console.log('login');
-    this.loggedIn = true;
-    return;
+  onLogin(loggedIn: boolean) { 
+    this.loggedIn = loggedIn;
+    this.popLogin = false;
   }
   
   async navProfile() {
-    if (!this.loggedIn)
-      await this.login();
     console.log('route to profile');
   }
 
-  toggleMG(mode: string) {
-    if (mode == 'on')
-      this.mgLogoSrc = '../assets/mind_goblin_icon.webp';
-    else if (mode == 'off')
-      this.mgLogoSrc = '../assets/mind_goblin_hidden.webp';
+  test() {
+    console.log('hit')
   }
 }

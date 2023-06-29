@@ -1,22 +1,31 @@
-<div id="navWrapper">
-  <button id="mg-logo" class="navBtn" (mouseenter)="toggleMG('on')" (mouseleave)="toggleMG('off')" (click)="navMG()">
-    <img [src]="mgLogoSrc" alt="Mind Goblin Logo">
-  </button>
-  <button id="profileBtn" class="navBtn" class="navBtn" (mouseenter)="iconStyle = 'fas'" (mouseleave)="iconStyle = 'far'" (click)="navProfile()">
-    <fa-icon [icon]="[iconStyle, 'user']" size="2x"></fa-icon>
-  </button>
-</div>
-
-<h1>Dungeon Crawlers</h1>
 <div>
-  <button class="dc-button menu-btn">New Character</button>
-  <button class="dc-button menu-btn">Load Character</button>
-  <button class="dc-button menu-btn" (click)="navRules()">Rules Document</button>
-</div>
+  <div id="navWrapper">
+    <button id="mg-logo" class="navBtn" (mouseenter)="mgLogo = mgLogoSrc" (mouseleave)="mgLogo = mgLogoHiddenSrc" (click)="navMG()">
+      <img [src]="mgLogo" alt="Mind Goblin Logo">
+    </button>
+    <button *ngIf="!loggedIn" id="loginBtn" class="navBtn" (mouseenter)="loginIcon = 'door-open'" (mouseleave)="loginIcon = 'door-closed'" (click)="popLogin = true">
+      <fa-icon [icon]="['fas', loginIcon]" size="2x"></fa-icon>
+    </button>
+    <button *ngIf="loggedIn" id="profileBtn" class="navBtn" (mouseenter)="profilePrefix = 'fas'" (mouseleave)="profilePrefix = 'far'" (click)="navProfile()">
+      <fa-icon [icon]="[profilePrefix, 'user']" size="2x"></fa-icon>
+    </button>
+  </div>
 
-<!-- <div style="display:flex;flex-wrap: wrap;margin-bottom: 100px;width:100%;justify-content: center;">
-  <card style="margin: 10px;" *ngFor="let card of cards; index as i" [name]="card" [status]="status[i]"></card>
-</div> -->
+  <h1>Dungeon Crawlers</h1>
+  <div>
+    <button class="dc-button menu-btn">New Character</button>
+    <button class="dc-button menu-btn">Load Character</button>
+    <button class="dc-button menu-btn" (click)="navRules()">Rules Document</button>
+  </div>
+
+  <!-- <div style="display:flex;flex-wrap: wrap;margin-bottom: 100px;width:100%;justify-content: center;">
+    <card style="margin: 10px;" *ngFor="let card of cards; index as i" [name]="card" [status]="status[i]"></card>
+  </div> -->
+
+  <div *ngIf="popLogin" id="loginWrapper">
+    <app-login (loggedIn)="onLogin($event)"></app-login>
+  </div>
+</div>
 
 <footer>
   <div>

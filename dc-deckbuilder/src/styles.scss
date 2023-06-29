@@ -31,8 +31,20 @@ footer {
   margin: 5px;
   background-color: rgb(83, 83, 83);
   cursor: pointer;
+  font-size: 24px;
+  color: white;
+  box-shadow: black 2px 2px;
 }
 
 .dc-button:hover {
   background-color: rgb(68, 68, 68);
+}
+
+.dc-button.light {
+  background-color: gray;
+  color: black;
+}
+
+.dc-button.light:hover {
+  background-color: rgb(112, 112, 112);
 }
