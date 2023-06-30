@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IconName, IconPrefix } from '@fortawesome/fontawesome-svg-core';
+import packageJson from '../../../package.json';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +10,8 @@ import { IconName, IconPrefix } from '@fortawesome/fontawesome-svg-core';
 export class HomeComponent {
   popLogin = false;
   loggedIn = false;
+  user = '';
+  version = packageJson.version;
   mgLogoSrc = '../assets/mind_goblin_icon.webp';
   mgLogoHiddenSrc = '../assets/mind_goblin_hidden.webp';
   mgLogo = this.mgLogoHiddenSrc;
@@ -28,16 +31,21 @@ export class HomeComponent {
     console.log('send to MG hub');
   }
 
-  onLogin(loggedIn: boolean) { 
-    this.loggedIn = loggedIn;
+  onLogin(loggedInUser: string) { 
+    this.user = loggedInUser;
+    this.loggedIn = loggedInUser == '' ? false : true;
     this.popLogin = false;
+    if (this.loggedIn)
+      console.log(this.user + ' successfully logged in');
+    else
+      console.log('didn\'t log in');
   }
   
   async navProfile() {
     console.log('route to profile');
   }
 
-  test() {
-    console.log('hit')
+  onRecover() {
+    console.log('route to password recovery');
   }
 }

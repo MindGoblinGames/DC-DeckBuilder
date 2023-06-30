@@ -1,33 +1,40 @@
-<div *ngIf="!create" class="wrapper">
-  <fa-icon class="closeBtn" [icon]="[iconType, 'circle-xmark']" size="2x" (click)="close()" (mouseenter)="iconType = 'fas'" (mouseleave)="iconType = 'far'"></fa-icon>
-  <h2>Login</h2>
-  <form>
-    <label for="username">Username:</label><br>
-    <input type="text" name="username" maxlength="{{MAX_INPUT_LENGTH}}" [(ngModel)]="username"><br>
-    <label for="password">Password:</label><br>
-    <input type="password" name="password" maxlength="{{MAX_INPUT_LENGTH}}" [(ngModel)]="password"><br>
-    <button class="submit dc-button light" (click)="login()">Login</button>
-  </form>
-  <div class="links">
-    <a (click)="create = true">Create Account</a>
-    <a>Forgot Password</a>
+<div id="wrapper">
+  <fa-icon id="closeBtn" [icon]="[iconType, 'circle-xmark']" size="2x" (click)="close('')" (mouseenter)="iconType = 'fas'" (mouseleave)="iconType = 'far'"></fa-icon>
+  
+  <div *ngIf="!create">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label for="username">Username:</label><br>
+      <input type="text" name="username" required maxlength="{{MAX_INPUT_LENGTH}}" [(ngModel)]="username"><br>
+      <label for="password">Password:</label><br>
+      <input type="password" name="password" requried minlength="8" maxlength="{{MAX_INPUT_LENGTH}}" [(ngModel)]="password"><br>
+      <button class="submit dc-button light" (click)="login()">Login</button>
+    </form>
   </div>
-</div>
 
-<div *ngIf="create" class="wrapper">
-  <h2>Register</h2>
-  <form>
-    <label for="username">Username:</label><br>
-    <input type="text" name="username" maxlength="{{MAX_INPUT_LENGTH}}" [(ngModel)]="username"><br>
-    <label for="email">Email:</label><br>
-    <input type="email" name="email" maxlength="{{MAX_INPUT_LENGTH}}" [(ngModel)]="email"><br>
-    <label for="password">Password:</label><br>
-    <input type="password" name="password" maxlength="{{MAX_INPUT_LENGTH}}" [(ngModel)]="password"><br>
-    <label for="confirm">Confirm Password:</label><br>
-    <input type="confirm" name="confirm" maxlength="{{MAX_INPUT_LENGTH}}" [(ngModel)]="confirm"><br>
-    <button class="submit dc-button light" (click)="register()">Submit</button>
-  </form>
-  <div class="links">
-    <a (click)="create = false">Back to Login</a>
+  <div *ngIf="create">
+    <h2>Register</h2>
+    <form id="registerForm">
+      <label for="username">Username:</label><br>
+      <input type="text" name="username" required maxlength="{{MAX_INPUT_LENGTH}}" [(ngModel)]="username" #user="ngModel"><br>
+      <label for="email">Email:</label><br>
+      <input type="email" name="email" required maxlength="{{MAX_INPUT_LENGTH}}" [(ngModel)]="email"><br>
+      <label for="password">Password:</label><br>
+      <input type="password" name="password" required minlength="8" maxlength="{{MAX_INPUT_LENGTH}}" [(ngModel)]="password"><br>
+      <label for="confirm">Confirm Password:</label><br>
+      <input type="password" name="confirm" required minlength="8" maxlength="{{MAX_INPUT_LENGTH}}" [(ngModel)]="confirm"><br>
+      <button class="submit dc-button light" (click)="register()">Submit</button>
+    </form>
+  </div>
+
+  <span id="response"></span>
+
+  
+  <div *ngIf="!create" class="links">
+    <a (click)="switch()">Create Account</a>
+    <a (click)="forgot()">Forgot Password</a>
+  </div>
+  <div *ngIf="create" class="links">
+    <a (click)="switch()">Back to Login</a>
   </div> 
 </div>

@@ -23,7 +23,7 @@
   </div> -->
 
   <div *ngIf="popLogin" id="loginWrapper">
-    <app-login (loggedIn)="onLogin($event)"></app-login>
+    <app-login (loggedIn)="onLogin($event)" (recover)="onRecover()"></app-login>
   </div>
 </div>
 
@@ -34,5 +34,5 @@
       Special thanks to [list here] for contributing to this project
     </p>
   </div>
-  <small>Site last updated to version 0.0.3 on 6/28/23 by Kyler Froman</small>
+  <small>Site last updated to version {{version}} on 6/28/23 by Kyler Froman</small>
 </footer>
